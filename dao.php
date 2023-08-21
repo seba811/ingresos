@@ -26,6 +26,7 @@ class Dao{
 
 		$tipopro;
 		$sqlpro = "SELECT * FROM preingresos where preingresos_rut = '$rut'";
+		//$sttemp = $this->mi->query($sqlpro);
 		$sttemp = $this->mi->query($sqlpro);
 		return $sttemp;
 		

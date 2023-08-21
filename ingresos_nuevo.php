@@ -28,16 +28,16 @@ if ($n != 0) {
 
     $row = $rs_preingresos->fetch_array(MYSQLI_ASSOC);
 
-    $qbiz_nombre = $row['preingresos_nombre'];
-    $qbiz_apellidop = $row['preingresos_apellidop'];
-    $qbiz_apellidom = $row['preingresos_apellidom'];
-    $banco_qbiz = $row['preingresos_banco'];
-    $cta_banco_qbiz = $row['preingresos_cta_banco'];
-    $prevision_qbiz = $row['preingresos_prevision'];
-    $salud_qbiz = $row['preingresos_salud'];
-    $estudios_qbiz = $row['preingresos_estudios'];
-    $nacionalidad_qbiz = $row['preingresos_nacionalidad'];
-    $sexo_qbiz = $row['preingresos_sexo'];
+    $qbiz_nombre = $row['nombre'];
+    $qbiz_apellidop = $row['apellidoP'];
+    $qbiz_apellidom = $row['apellidoM'];
+    $banco_qbiz = $row['banco'];
+    $cta_banco_qbiz = $row['ctaBanco'];
+    $prevision_qbiz = $row['prevision'];
+    $salud_qbiz = $row['salud'];
+    $estudios_qbiz = $row['estudios'];
+    $nacionalidad_qbiz = $row['nacionalidad'];
+    $sexo_qbiz = $row['sexo'];
 
     if ($sexo_qbiz == 'MASCULINO') {
         $sexo_qbiz = 'M';
@@ -45,33 +45,33 @@ if ($n != 0) {
         $sexo_qbiz = 'F';
     }
 
-    $edad_qbiz = $row['preingresos_fecha_naci'];
-    $estado_civil_qbiz = $row['preingresos_estado_civil'];
-    $direccion_qbiz = $row['preingresos_direccion'];
+    $edad_qbiz = $row['nacimiento'];
+    $estado_civil_qbiz = $row['estadoCivil'];
+    $direccion_qbiz = $row['direccion'];
 
-    $comuna_qbiz = $row['preingresos_comuna'];
-    $telefono_qbiz = $row['preingresos_fono'];
-    $correo_qbiz = $row['preingresos_correo'];
+    $comuna_qbiz = $row['comuna'];
+    $telefono_qbiz = $row['fono'];
+    $correo_qbiz = $row['correo'];
 
-    $pre_faena = $row['preingresos_faena'];
-    $pre_faena_cod = $row['preingresos_faena_cod'];
+    $pre_faena = $row['faena'];
+    $pre_faena_cod = $row['faenaCod'];
 
-    $pre_area = $row['preingresos_area'];
-    $pre_cargo = $row['preingresos_cargo'];
-    $pre_turno = $row['preingresos_turno'];
+    $pre_area = $row['area'];
+    $pre_cargo = $row['cargo'];
+    $pre_turno = $row['turno'];
 
-    $pre_exemple =  $row['preingresos_ex_emple'];
-    $pre_temporadas =  $row['preingresos_c_temporadas'];
+    $pre_exemple =  ""; // no encontradso en bd
+    $pre_temporadas =  $row['c_temporadas'];
 
-    $pre_emergencia_nombre = $row['preingresos_emergencia_nombre'];
-    $pre_emergencia_parentesco = $row['preingresos_emergencia_parentesco'];
-    $pre_emergencia_fono = $row['preingresos_emergencia_fono'];
+    $pre_emergencia_nombre = $row['contactoEmergencia'];
+    $pre_emergencia_parentesco = ""; // no encontradso en bd
+    $pre_emergencia_fono = $row['fonoEmergencia'];
 
-    $pre_enfermedad = $row['preingresos_enfermedad'];
-    $pre_enfermedad_detalle = $row['preingresos_enfermedad_detalle'];
+    $pre_enfermedad = $row['enfermedadCronica'];
+    $pre_enfermedad_detalle = $row['enfermedadDetalle'];
 
-    $pre_transportista =    $row['preingresos_transportista'];
-    $pre_transportista_nombre =    $row['preingresos_transportista_nombre'];
+    $pre_transportista =    $row['transportista'];
+    $pre_transportista_nombre =    $row['transportistaNombre'];
 
 
 
