@@ -9,6 +9,8 @@ if (!$_SESSION['usuario_id'] && !$_SESSION['usuario_usuario']) {
 }
 
 include('conexion.php');
+require('dao.php');
+$a = new Dao();
 
 
 
@@ -17,7 +19,8 @@ $rut = $_POST['rut'];
 $empresa = $_POST['empresa'];
 
 
-$rs_preingresos = $conexion->query("SELECT * FROM preingresos where preingresos_rut='$rut'");
+//$rs_preingresos = $conexion->query("SELECT * FROM preingresos where preingresos_rut='$rut'");
+$rs_preingresos = $a->ObtenerDatosPersonas($rut);
 $n = $rs_preingresos->num_rows;
 
 
@@ -181,8 +184,6 @@ ORDER BY e.Entidad DESC";
             $qbiz_apellidom = $nombre[1];
         } /*else if (count($nombre) == 4) { 
 
-         
-           
             $qbiz_nombre=$nombre[2]." ".$nombre[3];
             $qbiz_apellidop = $nombre[0];
             $qbiz_apellidom = $nombre[1];
