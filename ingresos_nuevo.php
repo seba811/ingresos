@@ -9,7 +9,9 @@ if (!$_SESSION['usuario_id'] && !$_SESSION['usuario_usuario']) {
 }
 
 include('conexion.php');
+include('conexionbdrequerimientos.php');
 require('dao.php');
+require('persona.php');
 $a = new Dao();
 
 
@@ -20,13 +22,17 @@ $empresa = $_POST['empresa'];
 
 
 //$rs_preingresos = $conexion->query("SELECT * FROM preingresos where preingresos_rut='$rut'");
-$rs_preingresos = $a->ObtenerDatosPersonas($rut);
+$rs_preingresos = $conexionreclutamiento->query("SELECT * FROM inscripcion where rut='$rut'");
+//$rs_preingresos = $a->ObtenerDatosPersonas($rut);
 $n = $rs_preingresos->num_rows;
+//echo $rs_preingresos;
+//$n = "1";
 
 
 if ($n != 0) {
 
-    $row = $rs_preingresos->fetch_array(MYSQLI_ASSOC);
+    //$row = $rs_preingresos->fetch_array(MYSQLI_ASSOC);
+    $row = $rs_preingresos->fetch_array(MYSQLI_BOTH);
 
     $qbiz_nombre = $row['nombre'];
     $qbiz_apellidop = $row['apellidoP'];
